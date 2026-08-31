@@ -26,15 +26,26 @@ The deck build uses a Microsoft-branded template and official product icons for 
 
 ## Quick Start: Local
 
+### Windows PowerShell
+
 ```powershell
 cd "github-copilot-for-data-professionals"
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python examples\python\00_generate_sample_data.py
-python examples\python\01_ingest_profile.py
-python examples\python\02_data_quality_checks.py
-python examples\python\05_feature_engineering_ml.py
+uv sync
+uv run python examples\python\00_generate_sample_data.py
+uv run python examples\python\01_ingest_profile.py
+uv run python examples\python\02_data_quality_checks.py
+uv run python examples\python\05_feature_engineering_ml.py
+```
+
+### WSL Bash
+
+```bash
+cd github-copilot-for-data-professionals
+uv sync
+uv run python examples/python/00_generate_sample_data.py
+uv run python examples/python/01_ingest_profile.py
+uv run python examples/python/02_data_quality_checks.py
+uv run python examples/python/05_feature_engineering_ml.py
 ```
 
 ## Build The Deck (Windows + WSL setup)

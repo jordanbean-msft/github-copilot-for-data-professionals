@@ -1,0 +1,24 @@
+[project]
+name = "github-copilot-for-data-professionals-demo-kit"
+version = "1.0.0"
+description = "Public-facing Microsoft Fabric demos for GitHub Copilot with data engineers and data scientists."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel",
+    "ipywidgets",
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "scikit-learn>=1.4.0",
+    "tqdm",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.uv]
+package = false

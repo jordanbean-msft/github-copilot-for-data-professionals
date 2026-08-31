@@ -69,6 +69,12 @@ function Draw-Circle($g, $cx, $cy, $r, $color) {
     $brush.Dispose()
 }
 
+function Draw-Image($g, $path, $x, $y, $w, $h) {
+    $img = [System.Drawing.Image]::FromFile($path)
+    $g.DrawImage($img, [System.Drawing.Rectangle]::new([int]$x, [int]$y, [int]$w, [int]$h))
+    $img.Dispose()
+}
+
 # Hero
 $c = New-Canvas 1400 900 '000041'; $g = $c.Graphics
 Fill-RoundRect $g 740 95 560 600 38 '0078D3'
@@ -99,23 +105,41 @@ for ($i=0; $i -lt $steps.Count; $i++) {
 Save-Canvas $c 'workflow-map.png'
 
 # Architecture
-$c = New-Canvas 1500 720 'EBEBEB'; $g = $c.Graphics
-Fill-RoundRect $g 55 65 1390 585 34 'FFFFFF'
+$iconDir = Join-Path $root 'deck\assets\icons'
+$c = New-Canvas 1500 760 'EBEBEB'; $g = $c.Graphics
+Fill-RoundRect $g 55 65 1390 625 34 'FFFFFF'
 $boxes = @(
-    @('GitHub repo','supply-chain scripts + prompts',110,225,210,150,'000041'),
-    @('VS Code + Copilot','generate, explain, test',420,225,270,150,'0078D3'),
-    @('Fabric notebook','supplier + inventory transforms',805,165,270,120,'5C2D91'),
-    @('Lakehouse','orders, shipments, inventory',805,335,270,120,'107C10'),
-    @('Power BI','risk scorecards',1190,250,220,150,'F7630C')
+    @{ Title='GitHub repo'; Sub='supply-chain scripts + prompts'; X=110; Y=225; W=230; H=180; Color='000041'; Icons=@('github-mark.png') },
+    @{ Title='VS Code + Copilot'; Sub='generate, explain, test'; X=420; Y=225; W=280; H=180; Color='0078D3'; Icons=@('vscode.png','github-copilot.png') },
+    @{ Title='Fabric notebook'; Sub='supplier + inventory transforms'; X=805; Y=140; W=280; H=175; Color='5C2D91'; Icons=@('fabric-notebook.png') },
+    @{ Title='Lakehouse'; Sub='orders, shipments, inventory'; X=805; Y=350; W=280; H=175; Color='107C10'; Icons=@('fabric-lakehouse.png') },
+    @{ Title='Power BI'; Sub='risk scorecards'; X=1190; Y=225; W=220; H=180; Color='F7630C'; Icons=@('power-bi.png') }
 )
 foreach ($b in $boxes) {
-    Fill-RoundRect $g $b[2] $b[3] $b[4] $b[5] 24 $b[6]
-    Draw-Text $g $b[0] ($b[2]+15) ($b[3]+34) ($b[4]-30) 38 29 'FFFFFF' $true 'Center'
-    Draw-Text $g $b[1] ($b[2]+15) ($b[3]+78) ($b[4]-30) 42 20 'FFFFFF' $false 'Center'
+    Fill-RoundRect $g $b.X $b.Y $b.W $b.H 24 $b.Color
+    $badgeSize = 58
+    $gap = 14
+    $n = $b.Icons.Count
+    $totalW = ($n * $badgeSize) + (($n - 1) * $gap)
+    $startX = $b.X + ($b.W - $totalW) / 2
+    $badgeY = $b.Y + 16
+    for ($i = 0; $i -lt $n; $i++) {
+        $bx = $startX + $i * ($badgeSize + $gap)
+        Fill-RoundRect $g $bx $badgeY $badgeSize $badgeSize 14 'FFFFFF'
+        $pad = 9
+        Draw-Image $g (Join-Path $iconDir $b.Icons[$i]) ($bx + $pad) ($badgeY + $pad) ($badgeSize - 2*$pad) ($badgeSize - 2*$pad)
+    }
+    $textY = $badgeY + $badgeSize + 10
+    Draw-Text $g $b.Title ($b.X+10) $textY ($b.W-20) 34 22 'FFFFFF' $true 'Center'
+    Draw-Text $g $b.Sub ($b.X+15) ($textY+34) ($b.W-30) 44 15 'FFFFFF' $false 'Center'
 }
-Draw-Line $g 325 300 410 300 '0078D3' 10; Draw-Line $g 700 300 795 225 '0078D3' 10; Draw-Line $g 700 300 795 395 '0078D3' 10; Draw-Line $g 1080 310 1180 325 '0078D3' 10
+Draw-Line $g 340 315 420 315 '0078D3' 10
+Draw-Line $g 700 315 805 227 '0078D3' 10
+Draw-Line $g 700 315 805 437 '0078D3' 10
+Draw-Line $g 1085 227 1190 315 '0078D3' 10
+Draw-Line $g 1085 437 1190 315 '0078D3' 10
 Draw-Text $g 'Microsoft Fabric demo architecture' 90 90 700 60 38 '000041' $true
-Draw-Text $g 'Synthetic data only: purchase orders + shipments + inventory snapshots' 92 565 1000 38 25 '75757A'
+Draw-Text $g 'Synthetic data only: purchase orders + shipments + inventory snapshots' 92 605 1000 38 25 '75757A'
 Save-Canvas $c 'fabric-architecture.png'
 
 # Code window
