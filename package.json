@@ -1,0 +1,15 @@
+{
+  "name": "github-copilot-for-data-professionals-demo-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public-facing deck and Microsoft Fabric-oriented demos for GitHub Copilot with data engineers and scientists.",
+  "scripts": {
+    "build:deck": "node scripts/build_deck.js",
+    "build:notebooks": "python scripts/create_notebooks.py",
+    "build": "npm run build:notebooks && npm run build:deck",
+    "build:deck:windows": "powershell -ExecutionPolicy Bypass -File scripts/download_product_icons.ps1; powershell -ExecutionPolicy Bypass -File scripts/generate_deck_assets.ps1; npm run build:deck; powershell -ExecutionPolicy Bypass -File scripts/apply_microsoft_template.ps1; powershell -ExecutionPolicy Bypass -File scripts/normalize_deck_layout.ps1"
+  },
+  "devDependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}

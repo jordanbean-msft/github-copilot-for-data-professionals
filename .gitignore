@@ -1,0 +1,9 @@
+node_modules/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+examples/data/*.csv
+examples/data/*.db
+deck/*.png
+deck/render-check/
