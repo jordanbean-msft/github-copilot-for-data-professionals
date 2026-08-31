@@ -139,7 +139,7 @@ Draw-Line $g 700 315 805 437 '0078D3' 10
 Draw-Line $g 1085 227 1190 315 '0078D3' 10
 Draw-Line $g 1085 437 1190 315 '0078D3' 10
 Draw-Text $g 'Microsoft Fabric demo architecture' 90 90 700 60 38 '000041' $true
-Draw-Text $g 'Purchase orders, shipments, and inventory flow end to end' 92 605 1000 38 25 '75757A'
+Draw-Text $g 'Purchase orders, shipments and inventory flow end to end' 92 605 1000 38 25 '75757A'
 Save-Canvas $c 'fabric-architecture.png'
 
 # Code window
@@ -165,7 +165,7 @@ $c = New-Canvas 1200 720 '000041'; $g = $c.Graphics
 Draw-Text $g 'SQL analytics from plain English' 75 60 700 55 42 '50E6FF' $true
 Fill-RoundRect $g 75 165 455 390 28 'FFFFFF'; Draw-Text $g 'Business question' 115 210 350 45 30 '000041' $true
 Draw-Text $g 'Which suppliers are at risk?' 115 292 355 90 34 '0078D3' $true
-Draw-Text $g 'By lane, plant, and part' 115 410 330 45 26 '75757A'
+Draw-Text $g 'By lane, plant and part' 115 410 330 45 26 '75757A'
 Fill-RoundRect $g 615 165 500 390 28 '11145A'
 foreach ($i in 0..5) { Fill-RoundRect $g 680 (230 + $i * 48) (315 + ($i % 2) * 80) 22 8 $(if ($i % 2) { 'FFFFFF' } else { '50E6FF' }) }
 Save-Canvas $c 'sql-analytics.png'

@@ -106,7 +106,7 @@ function addDemoRibbon(slide, text) {
   slide.addShape(pptx.ShapeType.arc, { x: 9.85, y: 1.0, w: 2.2, h: 2.2, line: { color: COLORS.cyan, width: 3, beginArrowType: "none", endArrowType: "none" }, adjustPoint: 0.25 });
   slide.addShape(pptx.ShapeType.roundRect, { x: 9.25, y: 3.15, w: 3.35, h: 1.52, fill: { color: COLORS.blue }, line: { color: COLORS.blue } });
   slide.addText("Data Engineering\nData Science\nAnalytics Engineering", { x: 9.55, y: 3.48, w: 2.75, h: 0.78, fontSize: 18, bold: true, color: COLORS.white, align: "center", margin: 0 });
-  addNotes(slide, "Open with the core thesis: Copilot is not a developer-only productivity tool. Data professionals write code constantly - notebooks, SQL, PySpark, Python, tests, YAML, documentation, and operational runbooks. The value is reducing friction across that daily coding surface while keeping the data professional in control.");
+  addNotes(slide, "Open with the core thesis: Copilot is not a developer-only productivity tool. Data professionals write code constantly - notebooks, SQL, PySpark, Python, tests, YAML, documentation and operational runbooks. The value is reducing friction across that daily coding surface while keeping the data professional in control.");
 }
 
 // 2
@@ -117,14 +117,14 @@ function addDemoRibbon(slide, text) {
   sectionNumber(slide, 0, "Frame the opportunity");
   slide.addText("Copilot helps data teams move from blank page to validated workflow faster", { x: 1.25, y: 2.0, w: 8.2, h: 0.66, fontSize: 28, bold: true, color: COLORS.navy, margin: 0, fit: "shrink" });
   addCard(slide, 1.25, 3.05, 3.3, 1.25, "Code is everywhere", "Python notebooks, PySpark jobs, SQL queries, tests, deployment scripts, documentation", COLORS.blue);
-  addCard(slide, 5.0, 3.05, 3.3, 1.25, "The bottleneck is context", "Understanding schemas, APIs, patterns, and edge cases slows delivery", COLORS.cyan);
-  addCard(slide, 8.75, 3.05, 3.3, 1.25, "Expertise still leads", "Copilot drafts and explains; humans validate meaning, quality, governance, and risk", COLORS.green);
+  addCard(slide, 5.0, 3.05, 3.3, 1.25, "The bottleneck is context", "Understanding schemas, APIs, patterns and edge cases slows delivery", COLORS.cyan);
+  addCard(slide, 8.75, 3.05, 3.3, 1.25, "Expertise still leads", "Copilot drafts and explains; humans validate meaning, quality, governance and risk", COLORS.green);
   slide.addShape(pptx.ShapeType.chevron, { x: 2.5, y: 5.2, w: 1.1, h: 0.6, fill: { color: COLORS.gray }, line: { color: COLORS.gray } });
   slide.addShape(pptx.ShapeType.chevron, { x: 4.2, y: 5.2, w: 1.1, h: 0.6, fill: { color: COLORS.blue }, line: { color: COLORS.blue } });
   slide.addShape(pptx.ShapeType.chevron, { x: 5.9, y: 5.2, w: 1.1, h: 0.6, fill: { color: COLORS.cyan }, line: { color: COLORS.cyan } });
   slide.addShape(pptx.ShapeType.chevron, { x: 7.6, y: 5.2, w: 1.1, h: 0.6, fill: { color: COLORS.green }, line: { color: COLORS.green } });
   slide.addText("Understand -> Generate -> Refine -> Document", { x: 2.1, y: 6.05, w: 7.0, h: 0.3, fontSize: 18, bold: true, color: COLORS.navy, align: "center", margin: 0 });
-  addNotes(slide, "Emphasize that the value is not replacing judgment. It is improving the speed at which a data professional can explore, draft, test, and document. That is especially relevant in Fabric where teams often move among Python, Spark, SQL, notebooks, and lakehouse concepts in the same workflow.");
+  addNotes(slide, "Emphasize that the value is not replacing judgment. It is improving the speed at which a data professional can explore, draft, test and document. That is especially relevant in Fabric where teams often move among Python, Spark, SQL, notebooks and lakehouse concepts in the same workflow.");
 }
 
 // 3
@@ -237,7 +237,7 @@ function addDemoRibbon(slide, text) {
   slide.background = { color: COLORS.white };
   title(slide, "Quality Checks & Quarantine");
   addDemoRibbon(slide, "Demo file 02");
-  addCard(slide, 0.95, 1.55, 3.4, 1.35, "Required fields", "Missing or blank region, device, product, and event fields", COLORS.blue);
+  addCard(slide, 0.95, 1.55, 3.4, 1.35, "Required fields", "Missing or blank region, device, product and event fields", COLORS.blue);
   addCard(slide, 4.9, 1.55, 3.4, 1.35, "Range checks", "Invalid discounts, negative vibration, impossible temperatures", COLORS.orange);
   addCard(slide, 8.85, 1.55, 3.4, 1.35, "Quarantine", "Failed rows with reason codes for triage and replay", COLORS.green);
   slide.addShape(pptx.ShapeType.roundRect, { x: 1.2, y: 4.05, w: 10.65, h: 1.18, fill: { color: COLORS.navy }, line: { color: COLORS.navy } });
@@ -287,7 +287,7 @@ function addDemoRibbon(slide, text) {
   addCard(slide, 1.05, 4.05, 3.45, 1.15, "Feature ideation", "Ask for candidate features and leakage risks", COLORS.cyan);
   addCard(slide, 5.05, 4.05, 3.45, 1.15, "Model scaffold", "Train/test split, baseline model, metrics", COLORS.blue);
   addCard(slide, 9.05, 4.05, 3.45, 1.15, "Interpretation", "Explain feature importance and next experiments", COLORS.green);
-  addNotes(slide, "Transition to the data science workflow. Copilot helps create a quick baseline model, but the real value is also in feature ideation, experiment scaffolding, and interpreting the output in plain language.");
+  addNotes(slide, "Transition to the data science workflow. Copilot helps create a quick baseline model, but the real value is also in feature ideation, experiment scaffolding and interpreting the output in plain language.");
 }
 
 // 12
@@ -299,11 +299,11 @@ function addDemoRibbon(slide, text) {
     ["Role + context", "You are a Fabric data engineer working with Lakehouse tables..."],
     ["Input + output", "Given this schema, return PySpark code and a short explanation..."],
     ["Constraints", "Avoid collecting to driver; handle nulls; keep functions testable..."],
-    ["Verification", "Add tests, edge cases, and explain how to validate the result..."],
+    ["Verification", "Add tests, edge cases and explain how to validate the result..."],
   ];
   prompts.forEach((p, i) => addCard(slide, 0.95 + (i % 2) * 6.0, 1.55 + Math.floor(i / 2) * 1.65, 5.25, 1.2, p[0], p[1], i % 2 ? COLORS.cyan : COLORS.blue));
   slide.addText("Best demo move: ask Copilot to critique its first answer", { x: 1.15, y: 5.35, w: 10.7, h: 0.32, fontSize: 21, bold: true, color: COLORS.navy, align: "center", margin: 0 });
-  addNotes(slide, "Do not over-index on magic prompts. Teach a simple pattern: role, context, expected output, constraints, and verification. The most compelling moment is asking Copilot to critique or test its own draft.");
+  addNotes(slide, "Do not over-index on magic prompts. Teach a simple pattern: role, context, expected output, constraints and verification. The most compelling moment is asking Copilot to critique or test its own draft.");
 }
 
 // 13
@@ -312,11 +312,11 @@ function addDemoRibbon(slide, text) {
   slide.background = { color: COLORS.gray };
   title(slide, "Responsible Data Workflows");
   addCard(slide, 0.95, 1.55, 3.6, 1.35, "Data protection", "Use synthetic or approved data in demos; avoid secrets and sensitive files", COLORS.blue);
-  addCard(slide, 4.95, 1.55, 3.6, 1.35, "Human validation", "Review generated code for correctness, cost, privacy, and bias", COLORS.green);
-  addCard(slide, 8.95, 1.55, 3.6, 1.35, "Production controls", "Use PR reviews, tests, lineage, monitoring, and policy gates", COLORS.orange);
+  addCard(slide, 4.95, 1.55, 3.6, 1.35, "Human validation", "Review generated code for correctness, cost, privacy and bias", COLORS.green);
+  addCard(slide, 8.95, 1.55, 3.6, 1.35, "Production controls", "Use PR reviews, tests, lineage, monitoring and policy gates", COLORS.orange);
   slide.addShape(pptx.ShapeType.roundRect, { x: 1.45, y: 4.25, w: 9.8, h: 1.0, fill: { color: COLORS.white }, line: { color: COLORS.blue } });
   slide.addText("Copilot accelerates coding. Your engineering standards still decide what ships.", { x: 1.85, y: 4.58, w: 9.0, h: 0.26, fontSize: 18, bold: true, color: COLORS.navy, align: "center", margin: 0 });
-  addNotes(slide, "This is important for a public audience. Make it clear that Copilot should operate inside existing data governance, security, and software delivery controls. It is not a shortcut around review.");
+  addNotes(slide, "This is important for a public audience. Make it clear that Copilot should operate inside existing data governance, security and software delivery controls. It is not a shortcut around review.");
 }
 
 // 14
@@ -327,12 +327,12 @@ function addDemoRibbon(slide, text) {
   const metrics = [
     ["Time to first draft", "How quickly a pipeline, query, or notebook starts working"],
     ["Review quality", "More tests, clearer explanations, fewer hidden assumptions"],
-    ["Reuse", "Shared helpers, templates, prompts, and notebook patterns"],
+    ["Reuse", "Shared helpers, templates, prompts and notebook patterns"],
     ["Adoption", "Copilot metrics, active users, chat usage, PR and IDE signals"],
   ];
   metrics.forEach((m, i) => addCard(slide, 0.95 + i * 3.05, 1.75, 2.65, 2.4, m[0], m[1], [COLORS.blue, COLORS.cyan, COLORS.green, COLORS.orange][i]));
   slide.addText("Pair usage telemetry with outcome stories from real data workflows", { x: 1.25, y: 5.3, w: 10.6, h: 0.32, fontSize: 21, bold: true, color: COLORS.navy, align: "center", margin: 0 });
-  addNotes(slide, "Reference the idea of measuring both usage and outcomes. Metrics can show adoption, but the best executive story pairs telemetry with concrete data-team examples: fewer repetitive tasks, faster notebook creation, more consistent tests, and better documentation.");
+  addNotes(slide, "Reference the idea of measuring both usage and outcomes. Metrics can show adoption, but the best executive story pairs telemetry with concrete data-team examples: fewer repetitive tasks, faster notebook creation, more consistent tests and better documentation.");
 }
 
 // 15
@@ -342,8 +342,8 @@ function addDemoRibbon(slide, text) {
   slide.addText("Call to Action", { x: 0.85, y: 1.1, w: 8.3, h: 0.65, fontSize: 40, bold: true, color: COLORS.white, margin: 0 });
   slide.addText("Start with one workflow your data team repeats every week", { x: 0.88, y: 2.05, w: 8.8, h: 0.42, fontSize: 20, color: COLORS.cyan, margin: 0 });
   addCard(slide, 1.0, 3.05, 3.2, 1.25, "Pick", "A common notebook, SQL query, or quality check", COLORS.cyan);
-  addCard(slide, 5.0, 3.05, 3.2, 1.25, "Prompt", "Use role, context, constraints, and verification", COLORS.blue);
-  addCard(slide, 9.0, 3.05, 3.2, 1.25, "Measure", "Track saved time, quality, reuse, and adoption", COLORS.green);
+  addCard(slide, 5.0, 3.05, 3.2, 1.25, "Prompt", "Use role, context, constraints and verification", COLORS.blue);
+  addCard(slide, 9.0, 3.05, 3.2, 1.25, "Measure", "Track saved time, quality, reuse and adoption", COLORS.green);
   addNotes(slide, "Close with a practical ask. Do not ask the audience to transform everything at once. Ask them to pick one repeated workflow and use Copilot there with clear measurement and review.");
 }
 
