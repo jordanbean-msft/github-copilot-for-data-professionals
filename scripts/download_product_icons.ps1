@@ -11,11 +11,13 @@ $downloads = @(
     @{ Url = 'https://learn.microsoft.com/en-us/fabric/media/fabric-icon.png'; Out = 'microsoft-fabric.png' }
 )
 # Architecture diagram icons (slide 4: vscode.png, power-bi.png, fabric-lakehouse.png,
-# fabric-notebook.png) were rasterized from Iconify (api.iconify.design) SVG sources:
-#   vscode.png            <- logos:visual-studio-code (SVG Logos set, CC0)
-#   power-bi.png          <- logos:microsoft-power-bi (SVG Logos set, CC0)
-#   fabric-lakehouse.png  <- fluent-color:database-48 (Fluent UI System Icons, MIT)
-#   fabric-notebook.png   <- fluent-color:notebook-32 (Fluent UI System Icons, MIT)
+# fabric-notebook.png) were rasterized from official sources:
+#   vscode.png            <- Iconify (api.iconify.design) logos:visual-studio-code (SVG Logos set, CC0)
+#   power-bi.png          <- Iconify (api.iconify.design) logos:microsoft-power-bi (SVG Logos set, CC0)
+#   fabric-lakehouse.png  <- official Microsoft Fabric "Lakehouse" item icon, @fabric-msft/svg-icons
+#                            npm package (Lakehouse48Item), per https://learn.microsoft.com/fabric/fundamentals/icons
+#   fabric-notebook.png   <- official Microsoft Fabric "Notebook" item icon, @fabric-msft/svg-icons
+#                            npm package (Notebook48Item), per https://learn.microsoft.com/fabric/fundamentals/icons
 # These are committed directly to deck/assets/icons/ since PNG rasterization requires a
 # browser/graphics renderer rather than a simple download.
 

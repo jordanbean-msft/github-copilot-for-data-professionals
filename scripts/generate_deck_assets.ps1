@@ -139,7 +139,7 @@ Draw-Line $g 700 315 805 437 '0078D3' 10
 Draw-Line $g 1085 227 1190 315 '0078D3' 10
 Draw-Line $g 1085 437 1190 315 '0078D3' 10
 Draw-Text $g 'Microsoft Fabric demo architecture' 90 90 700 60 38 '000041' $true
-Draw-Text $g 'Synthetic data only: purchase orders + shipments + inventory snapshots' 92 605 1000 38 25 '75757A'
+Draw-Text $g 'Purchase orders, shipments, and inventory flow end to end' 92 605 1000 38 25 '75757A'
 Save-Canvas $c 'fabric-architecture.png'
 
 # Code window

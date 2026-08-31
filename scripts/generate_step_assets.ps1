@@ -65,7 +65,7 @@ function Draw-Line($g, $x1, $y1, $x2, $y2, $color, $width = 8) {
 
 # ---- Step 1: Generate supply-chain data quickly ----
 $c = New-Canvas 1200 944 '000041'; $g = $c.Graphics
-Draw-Text $g 'Synthetic Data Generator' 70 55 900 60 40 '50E6FF' $true
+Draw-Text $g 'Supply-Chain Data Generator' 70 55 900 60 40 '50E6FF' $true
 
 $tables = @(
     @('Purchase Orders','500 rows',70,'0078D3'),
@@ -94,7 +94,7 @@ foreach ($ch in $chips) {
 }
 
 Fill-RoundRect $g 70 790 1060 90 22 '0078D3'
-Draw-Text $g 'Prompt: generate synthetic PO + shipment + inventory data with anomalies' 100 800 1000 70 26 'FFFFFF' $true 'Center'
+Draw-Text $g 'Prompt: generate PO + shipment + inventory data with anomalies' 100 800 1000 70 26 'FFFFFF' $true 'Center'
 Save-Canvas $c 'step1-generate-data.png'
 
 # ---- Step 2: Profile operational data and surface risks ----
